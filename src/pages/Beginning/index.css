@@ -1,0 +1,131 @@
+.content {
+  width: 100%;
+  height: 100vh;
+  -webkit-user-select: none;
+  opacity: 0;
+}
+
+.grid {
+  display: grid;
+  /* grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr; */
+  width: 30vw;
+  height: 40vh;
+  grid-template-areas:
+    "first first first"
+    "second img fourth"
+    "third third third";
+}
+
+.rule {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  animation: ocl 15s ease infinite;
+  text-align: center;
+  padding: 10%;
+}
+
+.rule h4 {
+  font-size: 0.85rem;
+}
+
+.grid img {
+  width: 180px;
+  height: 180px;
+  grid-area: img;
+  align-self: center;
+  justify-self: center;
+}
+
+.rule:nth-child(2) {
+  grid-area: first;
+  /* background: red; */
+}
+
+.rule:nth-child(3) {
+  /* background: green; */
+  grid-area: second;
+}
+
+.rule:nth-child(4) {
+  /* background: yellow; */
+  grid-area: third;
+}
+
+.rule:nth-child(1) {
+  /* background: blue; */
+  grid-area: fourth;
+}
+
+#goAhead1 {
+  margin-top: 7.2rem;
+  transition: 1s ease;
+  width: 3%;
+  cursor: pointer;
+}
+
+.article1 {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
+#start {
+  transition: 0.36s;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+#start:hover {
+  transform: scale(1.36);
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .grid img {
+    width: 180px;
+    height: 180px;
+  }
+
+  #goAhead1 {
+    width: 10%;
+  }
+}
+
+@keyframes ocl {
+  0%,
+  100% {
+    border: 1px solid rgba(84, 67, 241, 0.75);
+    background: rgba(84, 67, 241, 0.1);
+  }
+
+  25% {
+    border: 1px solid rgba(128, 9, 194, 0.75);
+    background: rgba(128, 9, 194, 0.1);
+  }
+
+  50% {
+    border: 1px solid rgba(128, 0, 128, 0.75);
+    background: rgba(128, 0, 128, 0.1);
+  }
+
+  75% {
+    border: 1px solid rgb(164, 125, 255, 0.75);
+    background: rgba(164, 125, 255, 0.1);
+  }
+}
